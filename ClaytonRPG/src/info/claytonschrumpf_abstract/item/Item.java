@@ -10,11 +10,7 @@ public abstract class Item {
 	}
 
 	protected enum ItemType {
-		WEAPON,
-		POTION,
-		ARMOR,
-		CONSUMABLE,
-		TREASURE;
+		WEAPON, POTION, ARMOR, CONSUMABLE, TREASURE;
 	}
 
 	public String getName() {

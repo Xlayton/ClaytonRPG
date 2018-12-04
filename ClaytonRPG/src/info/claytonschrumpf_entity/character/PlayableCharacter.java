@@ -9,13 +9,14 @@ public class PlayableCharacter extends Character {
 
 	private ArrayList<Item> inventory;
 	private int balance;
+	private int hp;
 	private int xp;
 	private int xpForNextLevel;
 	private int xpToNextLevel;
 	private int statPoints;
 
-	public PlayableCharacter(int strength, int dexterity, int constitution, int intellect,
-			int wisdom, int charisma, int level, String name, Race race) {
+	public PlayableCharacter(int strength, int dexterity, int constitution, int intellect, int wisdom, int charisma,
+			int level, String name, Race race) {
 		super(strength, dexterity, constitution, intellect, wisdom, charisma, level, name, race);
 		inventory = new ArrayList<>();
 		statPoints = 27;
@@ -67,6 +68,14 @@ public class PlayableCharacter extends Character {
 		addBalance(cost / 2);
 		removeInventory(toSell);
 	}
+	
+	public void takeDamage(int amtToTake) {
+		if(amtToTake > this.hp) {
+			throw new IllegalArgumentException("Your dead");
+		} else {
+			this.hp -= amtToTake;
+		}
+	}
 
 	public void checkLevelUp() {
 		xpToNextLevel = xpForNextLevel - xp;
@@ -76,5 +85,4 @@ public class PlayableCharacter extends Character {
 			xpToNextLevel *= 2;
 		}
 	}
-
 }

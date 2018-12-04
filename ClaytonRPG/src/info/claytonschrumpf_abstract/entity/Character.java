@@ -18,9 +18,8 @@ public abstract class Character extends Entity {
 
 	private int[] stats;
 
-
-	public Character(int strength, int dexterity, int constitution, int intellect, int wisdom,
-			int charisma, int level, String name, Race race) {
+	public Character(int strength, int dexterity, int constitution, int intellect, int wisdom, int charisma, int level,
+			String name, Race race) {
 		super(strength, dexterity, constitution, intellect, wisdom, charisma);
 		this.name = name;
 		this.race = race;

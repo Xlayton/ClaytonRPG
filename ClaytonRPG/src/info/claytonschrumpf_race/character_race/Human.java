@@ -4,7 +4,6 @@ import info.claytonschrumpf_abstract.entity.Race;
 
 public class Human extends Race {
 
-
 	@Override
 	public void raceEffect() {
 		return;

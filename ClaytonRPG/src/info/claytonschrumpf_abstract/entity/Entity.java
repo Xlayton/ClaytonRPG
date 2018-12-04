@@ -9,9 +9,8 @@ public abstract class Entity {
 	private int intellect;
 	private int wisdom;
 	private int charisma;
-
-	public Entity(int strength, int dexterity, int constitution, int intellect, int wisdom,
-			int charisma) {
+	
+	public Entity(int strength, int dexterity, int constitution, int intellect, int wisdom, int charisma) {
 		this.strength = strength;
 		this.dexterity = dexterity;
 		this.constitution = constitution;

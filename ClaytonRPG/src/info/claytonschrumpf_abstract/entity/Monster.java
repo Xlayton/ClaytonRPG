@@ -8,8 +8,8 @@ public abstract class Monster extends Entity {
 
 	private int[] stats;
 
-	public Monster(int strength, int dexterity, int constitution, int intellect, int wisdom,
-			int charisma, int level, String name, Race race) {
+	public Monster(int strength, int dexterity, int constitution, int intellect, int wisdom, int charisma, int level,
+			String name, Race race) {
 		super(strength, dexterity, constitution, intellect, wisdom, charisma);
 		this.name = name;
 		this.race = race;
@@ -34,4 +34,3 @@ public abstract class Monster extends Entity {
 	}
 
 }
-
