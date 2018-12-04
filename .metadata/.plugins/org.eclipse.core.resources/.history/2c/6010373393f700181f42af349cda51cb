@@ -39,10 +39,10 @@ public class TrapSquare extends CaveSquare {
 	public void squareAction(PlayableCharacter toApply) {
 		switch(getAttemptType()) {
 		case DISARM:
-			disarmTrap(toApply);
+			disarmTrap();
 			break;
 		case AVOID:
-			skrrtTrap(toApply);
+			skrrtTrap();
 			break;
 		}
 	}
