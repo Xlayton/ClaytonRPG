@@ -27,3 +27,4 @@ README.md
 .gitignore
 LICENSE
 _config.yml
+/.metadata/

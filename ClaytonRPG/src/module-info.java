@@ -7,4 +7,5 @@
  */
 module ClaytonRPG {
 	exports info.claytonschrumpf;
+	requires java.desktop;
 }
