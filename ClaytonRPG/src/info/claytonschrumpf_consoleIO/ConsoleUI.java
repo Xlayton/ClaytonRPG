@@ -51,9 +51,14 @@ public class ConsoleUI {
 		selection = promptForInt("What is your selection?", minInput, amtOptions);
 		return selection;
 	}
-	
-	public static Enum<T> promptForMenuSelection(Enum<T> options) {
-		
+
+	public static <T extends EnumMenuSelection> T promptForMenuSelection(String prompt, T[] enumOptions) {
+		printLine(prompt + ": ");
+		for (int i = 0; i < enumOptions.length; i++) {
+			printLine(i + ". " + enumOptions[i].getName());
+		}
+		int select = promptForInt("Enter Selection: ", 0, enumOptions.length - 1);
+		return enumOptions[select];
 	}
 
 	/**

@@ -7,10 +7,8 @@ import info.claytonschrumpf_abstract.item.Item;
 import info.claytonschrumpf_consoleIO.ConsoleUI;
 
 public class PlayableCharacter extends Character {
-
 	private ArrayList<Item> inventory;
 	private int balance;
-	private int hp;
 	private int xp;
 	private int xpForNextLevel;
 	private int xpToNextLevel;
@@ -26,6 +24,10 @@ public class PlayableCharacter extends Character {
 
 	public int getStatPoints() {
 		return statPoints;
+	}
+
+	public void subtractStatPoint() {
+		statPoints--;
 	}
 
 	public ArrayList<Item> getInventory() {
@@ -69,17 +71,9 @@ public class PlayableCharacter extends Character {
 		addBalance(cost / 2);
 		removeInventory(toSell);
 	}
-	
-	public void takeDamage(int amtToTake) {
-		if(amtToTake > this.hp) {
-			throw new IllegalArgumentException("Your dead");
-		} else {
-			this.hp -= amtToTake;
-		}
-	}
-	
+
 	public void moveCharacter() {
-		
+
 	}
 
 	public void checkLevelUp() {
@@ -90,18 +84,24 @@ public class PlayableCharacter extends Character {
 			xpToNextLevel *= 2;
 		}
 	}
-	
+
 	public enum Direction {
 		NORTH("North"), SOUTH("South"), EAST("East"), WEST("West");
-		
+
 		String str;
+
 		private Direction(String str) {
 			this.str = str;
 		}
-		
+
 		@Override
 		public String toString() {
 			return str;
 		}
+	}
+
+	@Override
+	public int initHP() {
+		return 0;
 	}
 }

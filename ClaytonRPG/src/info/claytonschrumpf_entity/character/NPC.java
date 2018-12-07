@@ -10,4 +10,10 @@ public class NPC extends Character {
 		super(strength, dexterity, constitution, intellect, wisdom, charisma, level, name, race);
 	}
 
+	@Override
+	public int initHP() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

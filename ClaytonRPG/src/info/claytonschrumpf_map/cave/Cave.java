@@ -27,7 +27,7 @@ public class Cave {
 			break;
 		}
 	}
-	
+
 	public CaveSquare[][] getCaveMap() {
 		return caveMap;
 	}
