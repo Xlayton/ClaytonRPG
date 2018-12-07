@@ -1,5 +1,3 @@
 package info.claytonschrumpf_map.village;
 
-public class Village {
-
-}
+public class Village {}

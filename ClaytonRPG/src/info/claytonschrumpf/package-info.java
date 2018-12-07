@@ -1,6 +1,4 @@
-/**
- * Main package for the RPG
- */
+/** Main package for the RPG */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

@@ -4,18 +4,18 @@ import info.claytonschrumpf_abstract.entity.Race;
 
 public class Human extends Race {
 
-	@Override
-	public void raceEffect() {
-		return;
-	}
+  @Override
+  public void raceEffect() {
+    return;
+  }
 
-	@Override
-	public Race getRace() {
-		return this;
-	}
+  @Override
+  public Race getRace() {
+    return this;
+  }
 
-	@Override
-	public String toString() {
-		return "Human";
-	}
+  @Override
+  public String toString() {
+    return "Human";
+  }
 }

@@ -1,6 +1,4 @@
-/**
- * Contains all Races
- */
+/** Contains all Races */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

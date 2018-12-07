@@ -6,14 +6,13 @@ import info.claytonschrumpf_map.cave.Cave.CaveSize;
 
 public class TreasureSquare extends CaveSquare {
 
-	public TreasureSquare(CaveSize size, int squareLevel) {
-		super(CaveSquareType.TREASURE, squareLevel);
-	}
+  public TreasureSquare(CaveSize size, int squareLevel) {
+    super(CaveSquareType.TREASURE, squareLevel);
+  }
 
-	@Override
-	public void squareAction(PlayableCharacter toApply) {
-		// TODO Auto-generated method stub
+  @Override
+  public void squareAction(PlayableCharacter toApply) {
+    // TODO Auto-generated method stub
 
-	}
-
+  }
 }

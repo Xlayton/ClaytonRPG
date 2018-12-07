@@ -1,6 +1,4 @@
-/**
- * Has all types Character Entities
- */
+/** Has all types Character Entities */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

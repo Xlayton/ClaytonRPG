@@ -1,6 +1,4 @@
-/**
- * Contains all abstract classes pertaining to items
- */
+/** Contains all abstract classes pertaining to items */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

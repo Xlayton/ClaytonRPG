@@ -1,6 +1,4 @@
-/**
- * Contains map resources
- */
+/** Contains map resources */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

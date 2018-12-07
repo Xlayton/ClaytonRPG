@@ -1,6 +1,4 @@
-/**
- * Contains cave resources
- */
+/** Contains cave resources */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

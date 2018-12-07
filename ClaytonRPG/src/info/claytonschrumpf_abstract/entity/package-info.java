@@ -1,6 +1,4 @@
-/**
- * Contains all abstract classes that pertain to entities
- */
+/** Contains all abstract classes that pertain to entities */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

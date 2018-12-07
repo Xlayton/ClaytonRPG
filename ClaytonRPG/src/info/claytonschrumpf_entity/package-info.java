@@ -1,6 +1,4 @@
-/**
- * Contains all entities
- */
+/** Contains all entities */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

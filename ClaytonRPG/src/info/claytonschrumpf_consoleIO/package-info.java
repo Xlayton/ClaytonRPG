@@ -1,6 +1,4 @@
-/**
- * Contains useful methods for console I/O
- */
+/** Contains useful methods for console I/O */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

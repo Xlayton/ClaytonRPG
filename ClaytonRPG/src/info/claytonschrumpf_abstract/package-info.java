@@ -1,6 +1,4 @@
-/**
- * Package containing all the abstract classes for the RPG
- */
+/** Package containing all the abstract classes for the RPG */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

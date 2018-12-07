@@ -1,6 +1,4 @@
-/**
- * Contains the monster entities
- */
+/** Contains the monster entities */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

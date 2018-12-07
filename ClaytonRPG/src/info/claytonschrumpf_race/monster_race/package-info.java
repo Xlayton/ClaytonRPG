@@ -1,6 +1,4 @@
-/**
- * Contains all monster races
- */
+/** Contains all monster races */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

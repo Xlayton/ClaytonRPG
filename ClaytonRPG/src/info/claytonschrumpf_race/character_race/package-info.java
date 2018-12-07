@@ -1,6 +1,4 @@
-/**
- * Contains all playable/character classes
- */
+/** Contains all playable/character classes */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

@@ -5,14 +5,13 @@ import info.claytonschrumpf_entity.character.PlayableCharacter;
 
 public class CreatureSquare extends CaveSquare {
 
-	public CreatureSquare(int squareLevel) {
-		super(CaveSquareType.MONSTER_ROOM, squareLevel);
-	}
+  public CreatureSquare(int squareLevel) {
+    super(CaveSquareType.MONSTER_ROOM, squareLevel);
+  }
 
-	@Override
-	public void squareAction(PlayableCharacter toApply) {
-		// TODO Auto-generated method stub
+  @Override
+  public void squareAction(PlayableCharacter toApply) {
+    // TODO Auto-generated method stub
 
-	}
-
+  }
 }

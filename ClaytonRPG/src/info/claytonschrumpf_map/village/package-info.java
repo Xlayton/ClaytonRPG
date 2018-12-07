@@ -1,6 +1,4 @@
-/**
- * Contains resources for village
- */
+/** Contains resources for village */
 /**
  * @since 1.0.0
  * @author Clayton Schrumpf

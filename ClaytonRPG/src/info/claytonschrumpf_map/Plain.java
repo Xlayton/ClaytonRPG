@@ -1,5 +1,3 @@
 package info.claytonschrumpf_map;
 
-public class Plain {
-
-}
+public class Plain {}

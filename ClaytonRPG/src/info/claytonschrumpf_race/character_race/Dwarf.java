@@ -4,20 +4,19 @@ import info.claytonschrumpf_abstract.entity.Race;
 
 public class Dwarf extends Race {
 
-	@Override
-	public void raceEffect() {
-		// TODO Auto-generated method stub
+  @Override
+  public void raceEffect() {
+    // TODO Auto-generated method stub
 
-	}
+  }
 
-	@Override
-	public Race getRace() {
-		return this;
-	}
+  @Override
+  public Race getRace() {
+    return this;
+  }
 
-	@Override
-	public String toString() {
-		return "Dwarf";
-	}
-
+  @Override
+  public String toString() {
+    return "Dwarf";
+  }
 }
