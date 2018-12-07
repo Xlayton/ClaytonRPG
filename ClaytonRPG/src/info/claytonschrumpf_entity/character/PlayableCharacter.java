@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import info.claytonschrumpf_abstract.entity.Character;
 import info.claytonschrumpf_abstract.entity.Race;
 import info.claytonschrumpf_abstract.item.Item;
+import info.claytonschrumpf_consoleIO.ConsoleUI;
 
 public class PlayableCharacter extends Character {
 
@@ -76,6 +77,10 @@ public class PlayableCharacter extends Character {
 			this.hp -= amtToTake;
 		}
 	}
+	
+	public void moveCharacter() {
+		
+	}
 
 	public void checkLevelUp() {
 		xpToNextLevel = xpForNextLevel - xp;
@@ -83,6 +88,20 @@ public class PlayableCharacter extends Character {
 			addLevel();
 			xp -= xpForNextLevel;
 			xpToNextLevel *= 2;
+		}
+	}
+	
+	public enum Direction {
+		NORTH("North"), SOUTH("South"), EAST("East"), WEST("West");
+		
+		String str;
+		private Direction(String str) {
+			this.str = str;
+		}
+		
+		@Override
+		public String toString() {
+			return str;
 		}
 	}
 }

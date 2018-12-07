@@ -51,6 +51,10 @@ public class ConsoleUI {
 		selection = promptForInt("What is your selection?", minInput, amtOptions);
 		return selection;
 	}
+	
+	public static Enum<T> promptForMenuSelection(Enum<T> options) {
+		
+	}
 
 	/**
 	 * Generates a prompt that expects the user to enter one of two responses that

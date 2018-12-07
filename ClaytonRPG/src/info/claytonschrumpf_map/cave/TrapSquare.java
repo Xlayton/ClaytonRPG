@@ -10,10 +10,13 @@ public class TrapSquare extends CaveSquare {
 	private final Random rand;
 	private final TrapType type;
 
+	private boolean isDisarmed;
+
 	public TrapSquare(int squareLevel) {
 		super(CaveSquareType.TRAP, squareLevel);
 		this.rand = new Random();
 		this.type = decideType();
+		isDisarmed = false;
 	}
 
 	private TrapType decideType() {
@@ -28,7 +31,23 @@ public class TrapSquare extends CaveSquare {
 	}
 
 	public enum TrapType {
-		SPIKE, FIRE, POISON_DART;
+		SPIKE(12, 5), FIRE(15, 8), POISON_DART(20, 12);
+
+		int difficultyCheck;
+		int damage;
+
+		private TrapType(int dif, int dam) {
+			this.difficultyCheck = dif;
+			this.damage = dam;
+		}
+
+		public int getDC() {
+			return difficultyCheck;
+		}
+
+		public int getDamage() {
+			return damage;
+		}
 	}
 
 	public enum TrapSolution {
@@ -37,7 +56,7 @@ public class TrapSquare extends CaveSquare {
 
 	@Override
 	public void squareAction(PlayableCharacter toApply) {
-		switch(getAttemptType()) {
+		switch (getAttemptType()) {
 		case DISARM:
 			disarmTrap(toApply);
 			break;
@@ -49,6 +68,7 @@ public class TrapSquare extends CaveSquare {
 
 	private TrapSolution getAttemptType() {
 		String[] choices = new String[] { "Disarm", "Avoid" };
+		System.out.println("The room is trapped!");
 		switch (ConsoleUI.promptForMenuSelection(choices, false)) {
 		case 1:
 			return TrapSolution.DISARM;
@@ -60,11 +80,29 @@ public class TrapSquare extends CaveSquare {
 	}
 
 	private void disarmTrap(PlayableCharacter toApply) {
-		int roll = rand.nextInt();
+		int roll = rand.nextInt(20) + 1 + toApply.getStatBlock()[3];
+		System.out.println("You rolled a " + roll + " with modifiers");
+		if (roll > type.getDC()) {
+			System.out.println("You sucessfully disarmed the trap!");
+			isDisarmed = true;
+		} else {
+			System.out.println("You triggered the trap! You made it through but sustained " + type.getDamage()
+					+ " points of damage.");
+			trapDamage(toApply);
+		}
+	}
+
+	private void trapDamage(PlayableCharacter toApply) {
+		toApply.takeDamage(type.getDamage());
 	}
 
 	private void skrrtTrap(PlayableCharacter toApply) {
+		int roll = rand.nextInt(20) + 1 + toApply.getStatBlock()[1];
+		System.out.println("You rolled a " + roll + " with modifiers");
 
+		if (roll > type.getDC()) {
+			return;
+		}
 	}
 
 }

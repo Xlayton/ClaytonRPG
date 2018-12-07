@@ -22,11 +22,12 @@ public class ConsoleGame {
 		PlayableCharacter playerCharacter = new PlayableCharacter(8, 8, 8, 8, 8, 8, 0, setName(),
 				setRace(playableCharacter));
 
-		Cave cave = new Cave("Base", CaveSize.SMALL, 1);
+		Cave cave = new Cave("RegSmall", CaveSize.SMALL, 1);
 
 		for (CaveSquare[] e : cave.getCaveMap()) {
 			for (CaveSquare s : e) {
 				System.out.println(s.getArt());
+				s.squareAction(playableCharacter);
 			}
 		}
 	}
