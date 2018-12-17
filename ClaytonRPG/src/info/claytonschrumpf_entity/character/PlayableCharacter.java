@@ -18,30 +18,11 @@ public class PlayableCharacter extends Character {
   private int xpForNextLevel;
   private int xpToNextLevel;
   private int statPoints;
-  
 
   public PlayableCharacter(
-      int strength,
-      int dexterity,
-      int constitution,
-      int intellect,
-      int wisdom,
-      int charisma,
-      int level,
-      String name,
-      Race race,
-      EntityClass entityClass) {
+      int[] stats, int level, String name, Race race, EntityClass entityClass) {
     super(
-        strength,
-        dexterity,
-        constitution,
-        intellect,
-        wisdom,
-        charisma,
-        level,
-        name,
-        race,
-        entityClass);
+        stats[0], stats[1], stats[2], stats[3], stats[4], stats[5], level, name, race, entityClass);
     statPoints = 27;
     xpForNextLevel = 100;
     rand = new Random();
@@ -130,6 +111,6 @@ public class PlayableCharacter extends Character {
 
   @Override
   public int initHP() {
-	 return this.getEntityClass().getHitDie() + getStatModifier(Stat.CONSTITUTION);
+    return this.getEntityClass().getHitDie() + getStatModifier(Stat.CONSTITUTION);
   }
 }

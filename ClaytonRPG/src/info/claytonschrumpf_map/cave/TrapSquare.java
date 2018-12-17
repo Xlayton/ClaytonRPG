@@ -96,23 +96,11 @@ public class TrapSquare extends CaveSquare {
     int roll = rand.nextInt(20) + 1;
     int rollAndMod = roll + toApply.getStatModifier(Stat.INTELLECT);
     if (roll != 1 && roll != 20) {
-      System.out.println(
-          "You rolled a "
-              + roll
-              + "\nYour modifier is "
-              + toApply.getStatModifier(Stat.INTELLECT)
-              + " which makes your roll "
-              + rollAndMod);
-    }
-    if (roll > type.getDC()) {
-      System.out.println("You sucessfully disarmed the trap!");
-      isDisarmed = true;
-    } else {
-      System.out.println(
-          "You triggered the trap! You sustained " + type.getDamage() + " points of damage.");
-      trapDamage(toApply);
-      if (toApply.isAlive()) {
-        System.out.println("At least it exhausted itself...");
+      if (rollAndMod > type.getDC()) {
+        isDisarmed = true;
+      } else {
+        trapDamage(toApply);
+        if (toApply.isAlive()) {}
       }
     }
   }
@@ -124,24 +112,12 @@ public class TrapSquare extends CaveSquare {
   private void skrrtTrap(PlayableCharacter toApply) {
     int roll = rand.nextInt(20) + 1;
     int rollAndMod = roll + toApply.getStatModifier(Stat.DEXTERITY);
-    System.out.println(
-        "You rolled a "
-            + roll
-            + "\nYour modifier is "
-            + toApply.getStatModifier(Stat.INTELLECT)
-            + " which makes your roll "
-            + rollAndMod);
     if (roll != 1 && roll != 20) {
-      if (roll > type.getDC()) {
-        System.out.println("You sucessfully avoided the trap!");
+      if (rollAndMod > type.getDC()) {
         isDisarmed = true;
       } else {
-        System.out.println(
-            "You triggered the trap! You sustained " + type.getDamage() + " points of damage.");
         trapDamage(toApply);
-        if (toApply.isAlive()) {
-          System.out.println("At least it exhausted itself...");
-        }
+        if (toApply.isAlive()) {}
       }
     }
   }

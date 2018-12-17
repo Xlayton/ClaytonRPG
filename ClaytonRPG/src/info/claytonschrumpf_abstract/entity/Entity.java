@@ -1,6 +1,7 @@
 package info.claytonschrumpf_abstract.entity;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import info.claytonschrumpf_consoleIO.EnumMenuSelection;
 import info.claytonschrumpf_entity.character.PlayableCharacter;
@@ -78,12 +79,12 @@ public abstract class Entity {
   }
 
   public void setStats(int[] statBlock) {
-    strength = statBlock[0];
-    dexterity = statBlock[1];
-    constitution = statBlock[2];
-    intellect = statBlock[3];
-    wisdom = statBlock[4];
-    charisma = statBlock[5];
+    this.strength = statBlock[0];
+    this.dexterity = statBlock[1];
+    this.constitution = statBlock[2];
+    this.intellect = statBlock[3];
+    this.wisdom = statBlock[4];
+    this.charisma = statBlock[5];
   }
 
   public enum Stat implements EnumMenuSelection {
@@ -156,6 +157,11 @@ public abstract class Entity {
 
   public String getName() {
     return name;
+  }
+  
+  public int roll(int numSides) {
+	  Random rand = new Random();
+	  return(rand.nextInt(numSides) + 1);
   }
 
   public abstract int initHP();

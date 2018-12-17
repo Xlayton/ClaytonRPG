@@ -13,30 +13,22 @@ import info.claytonschrumpf_race.character_race.CharacterRace;
 
 public class ConsoleGame {
   public void run() {
-    int[] baseStats = new int[] {8, 8, 8, 8, 8, 8};
-
     PlayableCharacter playerCharacter =
-        new PlayableCharacter(8, 8, 8, 8, 8, 8, 0, setName(), setRace(), setEntityClass());
-    initPlayerStats(baseStats, playerCharacter);
-    System.out.println(playerCharacter.getRace());
-    for(int e : playerCharacter.getStatBlock()) {
-    	System.out.println(e); 
-    }
-    System.out.println(playerCharacter.getHP());
-
+        new PlayableCharacter(initPlayerStats(), 0, setName(), setRace(), setEntityClass());
     Cave cave = new Cave("TestSmall", CaveSize.SMALL, 1);
 
     for (CaveSquare[] e : cave.getCaveMap()) {
       for (CaveSquare s : e) {
-        System.out.println(s.getArt());
+        ConsoleUI.printLine(s.getArt());
         s.squareAction(playerCharacter);
       }
     }
   }
 
-  private void initPlayerStats(int[] currentStats, PlayableCharacter curChar) {
-	  int[] newStats = currentStats;
-    while (curChar.getStatPoints() > 0) {
+  private int[] initPlayerStats() {
+    int[] baseStats = new int[] {8, 8, 8, 8, 8, 8};
+    int[] newStats = baseStats;
+    for (int i = 0; i < 37; i++) {
       displayPlayerStats(newStats);
       switch (ConsoleUI.promptForMenuSelection("Select a stat to increment", Stat.values())) {
         case STRENGTH:
@@ -58,18 +50,17 @@ public class ConsoleGame {
           newStats[5]++;
           break;
       }
-      curChar.subtractStatPoint();
     }
-    curChar.setStats(newStats);
-    }
+    return newStats;
+  }
 
   private void displayPlayerStats(int[] currentStats) {
-    System.out.println("Strength:\t" + currentStats[0]);
-    System.out.println("Dexterity:\t" + currentStats[1]);
-    System.out.println("Constitution:\t" + currentStats[2]);
-    System.out.println("Intellect:\t" + currentStats[3]);
-    System.out.println("Wisdom:\t" + currentStats[4]);
-    System.out.println("Charisma:\t" + currentStats[5]);
+    ConsoleUI.printLine("Strength:\t" + currentStats[0]);
+    ConsoleUI.printLine("Dexterity:\t" + currentStats[1]);
+    ConsoleUI.printLine("Constitution:\t" + currentStats[2]);
+    ConsoleUI.printLine("Intellect:\t" + currentStats[3]);
+    ConsoleUI.printLine("Wisdom:\t" + currentStats[4]);
+    ConsoleUI.printLine("Charisma:\t" + currentStats[5]);
   }
 
   private EntityClass setEntityClass() {

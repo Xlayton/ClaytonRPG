@@ -10,8 +10,8 @@ public enum CharacterRace implements EnumMenuSelection {
   DWARF("Dwarf", new Dwarf()),
   DRAGONBORN("Dragonborn", new Dragonborn());
 
-  String name;
-  Race race;
+  private String name;
+  private Race race;
 
   private CharacterRace(String name, Race race) {
     this.name = name;

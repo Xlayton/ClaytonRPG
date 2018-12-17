@@ -34,4 +34,6 @@ public abstract class Monster extends Entity {
   public int getLevel() {
     return level;
   }
+  
+  public abstract int attack();
 }

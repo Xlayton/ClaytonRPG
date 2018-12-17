@@ -1,6 +1,7 @@
 package info.claytonschrumpf_map.cave;
 
 import info.claytonschrumpf_abstract.cave.CaveSquare;
+import info.claytonschrumpf_race.monster_race.MonsterRace;
 
 public class Cave {
   private final String name;
@@ -22,7 +23,7 @@ public class Cave {
       case SMALL:
         caveMap = new CaveSquare[3][1];
         (caveMap[0][0] = new TrapSquare(caveLevel)).setPlayer();
-        caveMap[1][0] = new CreatureSquare(caveLevel);
+        caveMap[1][0] = new CreatureSquare(caveLevel, MonsterRace.GOBLIN);
         caveMap[2][0] = new TreasureSquare(CaveSize.SMALL, caveLevel);
         break;
     }
